@@ -1,8 +1,9 @@
+import Image from 'next/image';
 import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section id="home" className=" pt-30 min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 flex items-center py-16 px-4 sm:px-6 lg:px-8">
+    <section id="home" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }} className=" pt-30 min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 flex items-center py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Section - Content */}
@@ -11,7 +12,7 @@ const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
                 Hi, I'm{' '}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-[#1f31be] bg-clip-text text-transparent">
                   Nishtha
                 </span>
               </h1>
@@ -36,7 +37,7 @@ const HeroSection = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white bg-[#424874] rounded-xl hover:bg-[#5d65a1] transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <svg 
                   className="w-5 h-5 mr-2 transition-transform group-hover:scale-110" 
                   fill="none" 
@@ -48,7 +49,7 @@ const HeroSection = () => {
                 Download CV
               </button>
               
-              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-border-[#A6B1E1] dark:hover:border-[#A6B1E1] dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <svg 
                   className="w-5 h-5 mr-2 transition-transform group-hover:scale-110" 
                   fill="none" 
@@ -89,14 +90,13 @@ const HeroSection = () => {
               {/* Image Placeholder */}
               <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-2xl shadow-2xl flex items-center justify-center border border-gray-200 dark:border-gray-600">
                 {/* Profile Image Placeholder */}
-                <div className="text-center space-y-4">
-                  <div className="w-24 h-24 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mx-auto flex items-center justify-center">
-                    <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                    </svg>
-                  </div>
-                  <p className="text-gray-500 dark:text-gray-400 font-medium">Profile Image</p>
-                </div>
+                <Image 
+                src={"/images/myImage.png"}
+                alt="Profile Image"
+                className="w-full h-full object-cover rounded-2xl"
+                width={450}
+                height={450}
+                />
               </div>
 
               {/* Floating Elements */}

@@ -68,17 +68,17 @@ const About = () => {
   ];
 
   return (
-    <section id="about" style={{ background: "radial-gradient(ellipse at top, #34d3eb 0%, #fff 100%)" }} className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
+    <section id="about" style={{ background: "radial-gradient(ellipse at top, #DCD6F7 0%, #fff 100%)" }} className="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-[#424874] bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-[#424874] mx-auto rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -87,16 +87,16 @@ const About = () => {
             {/* Introduction */}
             <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
-                <span className="w-2 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full mr-4"></span>
+                <span className="w-2 h-8 bg-[#424874] rounded-full mr-4"></span>
                 Hello! I'm Nishtha Joshi
               </h3>
               <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed">
                 <p>
                   A passionate web developer and programmer with expertise in the{' '}
-                  <span className="font-semibold text-blue-600 dark:text-blue-400">MERN stack</span>,{' '}
-                  <span className="font-semibold text-purple-600 dark:text-purple-400">Java</span>,{' '}
-                  <span className="font-semibold text-green-600 dark:text-green-400">Python</span>, and{' '}
-                  <span className="font-semibold text-indigo-600 dark:text-indigo-400">game development</span>.
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">MERN stack</span>,{' '}
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">Java</span>,{' '}
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">Python</span>, and{' '}
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">game development</span>.
                 </p>
                 <p>
                   With a strong foundation in data structures and algorithms, I create efficient, 
@@ -104,9 +104,9 @@ const About = () => {
                 </p>
                 <p>
                   As a former{' '}
-                  <span className="font-semibold text-orange-600 dark:text-orange-400">NCC cadet</span>{' '}
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">NCC cadet</span>{' '}
                   and current{' '}
-                  <span className="font-semibold text-blue-600 dark:text-blue-400">President of Junior JC at JCI Kota Surbhi</span>, 
+                  <span className="font-semibold text-[#424874] dark:text-[#A6B1E1]">President of Junior JC at JCI Kota Surbhi</span>, 
                   I combine technical expertise with leadership skills to drive projects forward.
                 </p>
                 <p>
@@ -144,9 +144,9 @@ const About = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {highlights.map((highlight, index) => (
-                  <div key={index} className="group p-4 rounded-xl bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30 transition-all duration-300 border border-blue-100 dark:border-blue-800/30">
+                  <div key={index} className="group p-4 rounded-xl bg-gradient-to-br from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10 hover:from-[#A6B1E1]/30 hover:to-[#424874]/30 dark:hover:from-[#A6B1E1]/20 dark:hover:to-[#424874]/20 transition-all duration-300 border border-[#A6B1E1]/30 dark:border-[#424874]/30">
                     <div className="flex items-start space-x-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
+                      <div className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-[#A6B1E1] to-[#424874] rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                         {highlight.icon}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -171,7 +171,7 @@ const About = () => {
               <div className="flex flex-wrap gap-3">
                 {techStack.map((tech, index) => (
                   <div key={index} className="group relative">
-                    <div className="flex items-center space-x-2 px-4 py-3 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 hover:from-blue-100 hover:to-purple-100 dark:hover:from-blue-900/30 dark:hover:to-purple-900/30 rounded-xl border border-blue-200 dark:border-blue-800/30 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                    <div className="flex items-center space-x-2 px-4 py-3 bg-gradient-to-r from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10 hover:from-[#A6B1E1]/30 hover:to-[#424874]/30 dark:hover:from-[#A6B1E1]/20 dark:hover:to-[#424874]/20 rounded-xl border border-[#A6B1E1]/40 dark:border-[#424874]/40 transition-all duration-300 hover:scale-105 hover:shadow-lg">
                       <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                         {tech.name}
                       </span>
@@ -182,7 +182,7 @@ const About = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white shadow-xl">
+            <div className="bg-[#424874] rounded-2xl p-8 text-white shadow-xl">
               <h3 className="text-xl font-bold mb-6">Quick Stats</h3>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">

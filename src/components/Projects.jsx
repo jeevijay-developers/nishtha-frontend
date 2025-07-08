@@ -97,13 +97,14 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50" style={{ background: "radial-gradient(ellipse at top, #34d3eb 0%, #fff 100%)" }}>
+    <section id="projects" className="py-20" style={{ background: "radial-gradient(ellipse at top, #DCD6F7 0%, #fff 100%)" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#424874] to-[#A6B1E1] bg-clip-text text-transparent">
             My Projects
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#424874] to-[#A6B1E1] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Each project demonstrates my ability to create robust, user-friendly applications from concept to deployment. 
             I focus on writing clean, maintainable code while ensuring optimal performance and accessibility across all devices.
@@ -117,9 +118,20 @@ const Projects = () => {
               onClick={() => setActiveTab('web')}
               className={`flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === 'web'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-white shadow-md'
+                  : 'text-gray-700 hover:text-white'
               }`}
+              style={activeTab === 'web' ? { backgroundColor: '#424874' } : {}}
+              onMouseEnter={(e) => {
+                if (activeTab !== 'web') {
+                  e.target.style.backgroundColor = '#A6B1E1';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeTab !== 'web') {
+                  e.target.style.backgroundColor = '';
+                }
+              }}
             >
               <FaCode className="w-4 h-4 mr-2" />
               Web Development
@@ -128,9 +140,20 @@ const Projects = () => {
               onClick={() => setActiveTab('game')}
               className={`flex items-center px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeTab === 'game'
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  ? 'text-white shadow-md'
+                  : 'text-gray-700 hover:text-white'
               }`}
+              style={activeTab === 'game' ? { backgroundColor: '#424874' } : {}}
+              onMouseEnter={(e) => {
+                if (activeTab !== 'game') {
+                  e.target.style.backgroundColor = '#A6B1E1';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (activeTab !== 'game') {
+                  e.target.style.backgroundColor = '';
+                }
+              }}
             >
               <FaGamepad className="w-4 h-4 mr-2" />
               Game Development
@@ -146,7 +169,7 @@ const Projects = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {webProjects.map((project, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-blue-300">
+                <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-[#A6B1E1]">
                   {/* Project Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img 
@@ -164,8 +187,8 @@ const Projects = () => {
                     {/* Technologies */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.map((tech, techIndex) => (
-                        <div key={techIndex} className="flex items-center bg-blue-50 px-3 py-1 rounded-full text-sm border border-blue-200">
-                          <span className="text-blue-600 mr-1">{tech.icon}</span>
+                        <div key={techIndex} className="flex items-center px-3 py-1 rounded-full text-sm border border-gray-200" style={{ backgroundColor: 'rgba(166, 177, 225, 0.1)' }}>
+                          <span className="mr-1" style={{ color: '#424874' }}>{tech.icon}</span>
                           <span className="text-gray-700">{tech.name}</span>
                         </div>
                       ))}
@@ -177,7 +200,7 @@ const Projects = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         {project.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></span>
+                            <span className="w-1.5 h-1.5 rounded-full mr-2" style={{ backgroundColor: '#424874' }}></span>
                             {feature}
                           </li>
                         ))}
@@ -203,7 +226,7 @@ const Projects = () => {
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
               {gameProjects.map((project, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-blue-300">
+                <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-[#A6B1E1]">
                   {/* Project Image */}
                   <div className="relative h-48 overflow-hidden">
                     <img 
@@ -224,7 +247,7 @@ const Projects = () => {
                       <ul className="text-sm text-gray-600 space-y-1">
                         {project.features.map((feature, featureIndex) => (
                           <li key={featureIndex} className="flex items-center">
-                            <span className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></span>
+                            <span className="w-1.5 h-1.5 rounded-full mr-2" style={{ backgroundColor: '#424874' }}></span>
                             {feature}
                           </li>
                         ))}
@@ -233,8 +256,8 @@ const Projects = () => {
 
                     {/* Certification Badge */}
                     <div className="pt-4 border-t border-gray-200">
-                      <div className="flex items-center text-sm text-blue-600 font-medium">
-                        <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                      <div className="flex items-center text-sm font-medium" style={{ color: '#424874' }}>
+                        <span className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#424874' }}></span>
                         WhiteHat Jr. Certified
                       </div>
                     </div>

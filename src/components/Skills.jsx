@@ -10,8 +10,8 @@ const Skills = () => {
         </svg>
       ),
       skills: ["MERN Stack", "JavaScript", "HTML/CSS"],
-      gradient: "from-emerald-500 to-teal-500",
-      bgGradient: "from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20"
+      gradient: "from-[#A6B1E1] to-[#424874]",
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
     },
     {
       level: "Proficient",
@@ -21,8 +21,8 @@ const Skills = () => {
         </svg>
       ),
       skills: ["Java", "Python", "SQL", "Git", "Game Development"],
-      gradient: "from-blue-500 to-purple-500",
-      bgGradient: "from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20"
+      gradient: "from-[#A6B1E1] to-[#424874]",
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
     },
     {
       level: "Core",
@@ -32,8 +32,8 @@ const Skills = () => {
         </svg>
       ),
       skills: ["Data Structures & Algorithms", "Problem Solving", "Competitive Programming"],
-      gradient: "from-orange-500 to-red-500",
-      bgGradient: "from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20"
+      gradient: "from-[#A6B1E1] to-[#424874]",
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
     }
   ];
 
@@ -42,11 +42,11 @@ const Skills = () => {
       <div className="text-center mb-12">
         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Skills &{' '}
-          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#A6B1E1] to-[#424874] bg-clip-text text-transparent">
             Expertise
           </span>
         </h3>
-        <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+        <div className="w-16 h-1 bg-gradient-to-r from-[#A6B1E1] to-[#424874] mx-auto rounded-full"></div>
       </div>
 
       <div className="space-y-8">
@@ -77,7 +77,7 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="mt-8 p-6 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-800 dark:to-blue-900/30 rounded-2xl border border-gray-200 dark:border-gray-700">
+      <div className="mt-8 p-6 bg-gradient-to-r from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10 rounded-2xl border border-[#A6B1E1]/30 dark:border-[#424874]/30">
         <p className="text-gray-700 dark:text-gray-300 text-center leading-relaxed">
           I've developed a comprehensive skill set through hands-on experience and continuous learning. 
           My technical foundation is built on strong problem-solving abilities, backed by practical knowledge 

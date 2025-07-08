@@ -31,17 +31,17 @@ const Contacts = () => {
   ];
 
   return (
-    <section id="contact" className="py-20" style={{ background: "radial-gradient(ellipse at bottom, #34d3eb 0%, #fff 100%)" }}>
+    <section id="contact" className="py-20" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }}>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Contact{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-[#424874] bg-clip-text text-transparent">
               Information
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-[#424874] mx-auto rounded-full"></div>
         </div>
 
         {/* Contact Grid */}
