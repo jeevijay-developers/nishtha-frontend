@@ -1,0 +1,19 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="url(#blog-gradient)"/>
+  <rect x="50" y="50" width="300" height="200" rx="10" fill="white" opacity="0.9"/>
+  <rect x="70" y="70" width="260" height="20" rx="3" fill="#374151"/>
+  <rect x="70" y="100" width="180" height="10" rx="2" fill="#9CA3AF"/>
+  <rect x="70" y="120" width="220" height="10" rx="2" fill="#9CA3AF"/>
+  <rect x="70" y="140" width="160" height="10" rx="2" fill="#9CA3AF"/>
+  <rect x="70" y="170" width="260" height="1" fill="#E5E7EB"/>
+  <rect x="70" y="185" width="200" height="8" rx="2" fill="#6B7280"/>
+  <rect x="70" y="200" width="240" height="8" rx="2" fill="#6B7280"/>
+  <rect x="70" y="215" width="180" height="8" rx="2" fill="#6B7280"/>
+  <text x="200" y="270" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Personal Blog System</text>
+  <defs>
+    <linearGradient id="blog-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
