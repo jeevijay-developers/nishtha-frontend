@@ -1,9 +1,11 @@
+import About from "@/components/About";
 import HeroSection from "@/components/HeroSection";
 
-const page = () => {
+export default function Home() {
   return (
     <div>
       <HeroSection />
+      <About />
     </div>
   );
 }
