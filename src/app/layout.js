@@ -1,10 +1,17 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { Bricolage_Grotesque } from 'next/font/google';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'], // Choose your weights
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
@@ -21,8 +28,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+<<<<<<< HEAD
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
+=======
+        className={`${geistSans.variable} ${geistMono.variable} ${bricolageGrotesque.className} antialiased`}
+>>>>>>> ac3b75ad216e682ffc1c100fa6d3568fb19ac81f
       >
         <Navbar />
         {children}
