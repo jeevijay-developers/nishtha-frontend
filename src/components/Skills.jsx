@@ -11,7 +11,7 @@ const Skills = () => {
       ),
       skills: ["MERN Stack", "JavaScript", "HTML/CSS"],
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     },
     {
       level: "Proficient",
@@ -22,7 +22,7 @@ const Skills = () => {
       ),
       skills: ["Java", "Python", "SQL", "Git", "Game Development"],
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     },
     {
       level: "Core",
@@ -33,14 +33,14 @@ const Skills = () => {
       ),
       skills: ["Data Structures & Algorithms", "Problem Solving", "Competitive Programming"],
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     }
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
       <div className="text-center mb-12">
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-3xl font-bold text-gray-900 mb-4">
           Skills &{' '}
           <span className="bg-gradient-to-r from-[#A6B1E1] to-[#424874] bg-clip-text text-transparent">
             Expertise
@@ -52,12 +52,12 @@ const Skills = () => {
       <div className="space-y-8">
         {skillLevels.map((category, index) => (
           <div key={index} className="group">
-            <div className={`bg-gradient-to-r ${category.bgGradient} rounded-2xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-600 transition-all duration-300`}>
+            <div className={`bg-gradient-to-r ${category.bgGradient} rounded-2xl p-6 border-2 border-transparent hover:border-gray-200 transition-all duration-300`}>
               <div className="flex items-center space-x-4 mb-4">
                 <div className={`w-12 h-12 bg-gradient-to-r ${category.gradient} rounded-xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   {category.icon}
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h4 className="text-xl font-bold text-gray-900">
                   {category.level}
                 </h4>
               </div>
@@ -66,7 +66,7 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <span 
                     key={skillIndex}
-                    className="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-200 dark:border-gray-600"
+                    className="px-4 py-2 bg-white text-gray-800 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-200"
                   >
                     {skill}
                   </span>
@@ -77,8 +77,8 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="mt-8 p-6 bg-gradient-to-r from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10 rounded-2xl border border-[#A6B1E1]/30 dark:border-[#424874]/30">
-        <p className="text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+      <div className="mt-8 p-6 bg-gradient-to-r from-[#A6B1E1]/20 to-[#424874]/20 rounded-2xl border border-[#A6B1E1]/30">
+        <p className="text-gray-700 text-center leading-relaxed">
           I've developed a comprehensive skill set through hands-on experience and continuous learning. 
           My technical foundation is built on strong problem-solving abilities, backed by practical knowledge 
           of modern development tools and frameworks.

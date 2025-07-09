@@ -3,34 +3,34 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section id="home" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }} className=" pt-30 min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900 flex items-center py-16 px-4 sm:px-6 lg:px-8">
+    <section id="home" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }} className="pt-30 min-h-screen flex items-center py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Section - Content */}
           <div className="order-2 lg:order-1 space-y-8">
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Hi, I'm{' '}
                 <span className="bg-[#1f31be] bg-clip-text text-transparent">
                   Nishtha
                 </span>
               </h1>
               <div className="space-y-2">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700">
                   Full Stack Developer
                 </h2>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700">
                   Game Developer
                 </h2>
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-300">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-gray-700">
                   Tech Leader
                 </h2>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl">
               Passionate about creating innovative digital experiences and leading teams to build exceptional software solutions. 
               From web applications to immersive games, I bring ideas to life through code.
             </p>
@@ -49,7 +49,7 @@ const HeroSection = () => {
                 Download CV
               </button>
               
-              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-border-[#A6B1E1] dark:hover:border-[#A6B1E1] dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 bg-white border-2 border-gray-300 rounded-xl hover:border-[#A6B1E1] hover:text-blue-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <svg 
                   className="w-5 h-5 mr-2 transition-transform group-hover:scale-110" 
                   fill="none" 
@@ -64,14 +64,14 @@ const HeroSection = () => {
 
             {/* Tech Stack Icons */}
             <div className="pt-8">
-              <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">
+              <p className="text-sm font-semibold text-gray-500 mb-4 uppercase tracking-wider">
                 Technologies I Work With
               </p>
               <div className="flex flex-wrap gap-3">
                 {['React', 'Node.js', 'Python', 'Unity', 'TypeScript', 'MongoDB'].map((tech) => (
                   <span 
                     key={tech}
-                    className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200"
+                    className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200"
                   >
                     {tech}
                   </span>
@@ -88,7 +88,7 @@ const HeroSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur opacity-50"></div>
               
               {/* Image Placeholder */}
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-2xl shadow-2xl flex items-center justify-center border border-gray-200 dark:border-gray-600">
+              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[450px] lg:h-[450px] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-2xl flex items-center justify-center border border-gray-200">
                 {/* Profile Image Placeholder */}
                 <Image 
                 src={"/images/myImage.png"}

@@ -101,9 +101,13 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-[#424874] to-[#A6B1E1] bg-clip-text text-transparent">
-            My Projects
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            My{' '}
+            <span className="bg-[#424874] bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
+          {/* <div className="w-24 h-1 bg-[#424874] mx-auto rounded-full"></div> */}
           <div className="w-24 h-1 bg-gradient-to-r from-[#424874] to-[#A6B1E1] mx-auto mb-6 rounded-full"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Each project demonstrates my ability to create robust, user-friendly applications from concept to deployment. 

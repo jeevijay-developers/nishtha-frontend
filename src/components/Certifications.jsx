@@ -13,7 +13,7 @@ const Certifications = () => {
         </svg>
       ),
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     },
     {
       title: "Advanced React & Redux",
@@ -26,7 +26,7 @@ const Certifications = () => {
         </svg>
       ),
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     },
     {
       title: "MongoDB Database Administration",
@@ -38,7 +38,7 @@ const Certifications = () => {
         </svg>
       ),
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     },
     {
       title: "Data Structures & Algorithms",
@@ -50,14 +50,14 @@ const Certifications = () => {
         </svg>
       ),
       gradient: "from-[#A6B1E1] to-[#424874]",
-      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20 dark:from-[#A6B1E1]/10 dark:to-[#424874]/10"
+      bgGradient: "from-[#A6B1E1]/20 to-[#424874]/20"
     }
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+    <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100">
       <div className="text-center mb-12">
-        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-3xl font-bold text-gray-900 mb-4">
           <span className="bg-gradient-to-r from-[#A6B1E1] to-[#424874] bg-clip-text text-transparent">
             Certifications
           </span>
@@ -68,10 +68,10 @@ const Certifications = () => {
       <div className="space-y-6">
         {certifications.map((cert, index) => (
           <div key={index} className="group">
-            <div className={`relative bg-gradient-to-r ${cert.bgGradient} rounded-2xl p-6 border-2 border-transparent hover:border-gray-200 dark:hover:border-gray-600 transition-all duration-300 hover:shadow-lg`}>
+            <div className={`relative bg-gradient-to-r ${cert.bgGradient} rounded-2xl p-6 border-2 border-transparent hover:border-gray-200 transition-all duration-300 hover:shadow-lg`}>
               {/* Connection Line for Timeline Effect */}
               {index < certifications.length - 1 && (
-                <div className="absolute left-8 top-full w-0.5 h-6 bg-gradient-to-b from-[#A6B1E1] to-transparent dark:from-[#424874]"></div>
+                <div className="absolute left-8 top-full w-0.5 h-6 bg-gradient-to-b from-[#A6B1E1] to-transparent"></div>
               )}
               
               <div className="flex items-start space-x-4">
@@ -81,10 +81,10 @@ const Certifications = () => {
                 
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                    <h4 className="text-lg font-bold text-gray-900 dark:text-white">
+                    <h4 className="text-lg font-bold text-gray-900">
                       {cert.title}
                     </h4>
-                    <div className="bg-white dark:bg-gray-700 px-4 py-2 rounded-full border border-gray-200 dark:border-gray-600 mt-2 sm:mt-0 self-start sm:self-auto">
+                    <div className="bg-white px-4 py-2 rounded-full border border-gray-200 mt-2 sm:mt-0 self-start sm:self-auto">
                       <div className="w-20 h-8 relative flex items-center justify-center">
                         <Image 
                           src={cert.image} 
@@ -96,7 +96,7 @@ const Certifications = () => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     {cert.description}
                   </p>
                 </div>

@@ -4,17 +4,17 @@ import Certifications from './Certifications';
 
 const SkillsNAchievements = () => {
   return (
-    <section id="skills" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }} className="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50 dark:from-gray-800 dark:via-gray-900 dark:to-blue-900">
+    <section id="skills" style={{ background: "radial-gradient(ellipse at bottom, #DCD6F7 0%, #fff 100%)" }} className="py-20 bg-gradient-to-br from-white via-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
             Skills &{' '}
             <span className="bg-[#424874] bg-clip-text text-transparent">
               Achievements
             </span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             A comprehensive overview of my technical expertise and professional certifications
           </p>
           <div className="w-24 h-1 bg-[#424874] mx-auto rounded-full mt-6"></div>
@@ -35,11 +35,11 @@ const SkillsNAchievements = () => {
 
         {/* Bottom Call to Action */}
         <div className="mt-16 text-center">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+          <div className="bg-white rounded-2xl p-8 shadow-xl border border-gray-100 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Collaborate?
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+            <p className="text-gray-600 mb-6 leading-relaxed">
               I'm always excited to work on challenging projects and learn new technologies. 
               Let's build something amazing together!
             </p>
@@ -50,7 +50,7 @@ const SkillsNAchievements = () => {
                 </svg>
                 Start a Conversation
               </button>
-              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-xl hover:border-blue-500 dark:hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="group inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-gray-700 bg-white border-2 border-gray-300 rounded-xl hover:border-blue-500 hover:text-blue-600 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl">
                 <svg className="w-5 h-5 mr-2 transition-transform group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
