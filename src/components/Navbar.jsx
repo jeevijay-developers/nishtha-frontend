@@ -15,8 +15,8 @@ const Navbar = () => {
     { name: 'About', href: '#about', type: 'section', id: 'about' },
     { name: 'Skill & Achievements', href: '#skills', type: 'section', id: 'skills' },
     { name: 'Projects', href: '#projects', type: 'section', id: 'projects' },
-    { name: 'Gallery', href: '/gallery', type: 'page', id: 'gallery' },
     { name: 'Contact', href: '#contact', type: 'section', id: 'contact' },
+    { name: 'Gallery', href: '/gallery', type: 'page', id: 'gallery' },
   ];
 
   // Detect active section based on scroll position
