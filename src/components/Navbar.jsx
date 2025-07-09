@@ -1,28 +1,80 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const pathname = usePathname();
+  const router = useRouter();
 
   const navItems = [
-    { name: 'Home', href: '#home', type: 'page' },
-    { name: 'About', href: '#about', type: 'section' },
-    { name: 'Skill & Achievements', href: '#skills', type: 'section' },
-    { name: 'Projects', href: '#projects', type: 'section' },
-    { name: 'Gallery', href: '/gallery', type: 'page' },
-    { name: 'Contact', href: '#contact', type: 'section' },
+    { name: 'Home', href: '#home', type: 'section', id: 'home' },
+    { name: 'About', href: '#about', type: 'section', id: 'about' },
+    { name: 'Skill & Achievements', href: '#skills', type: 'section', id: 'skills' },
+    { name: 'Projects', href: '#projects', type: 'section', id: 'projects' },
+    { name: 'Gallery', href: '/gallery', type: 'page', id: 'gallery' },
+    { name: 'Contact', href: '#contact', type: 'section', id: 'contact' },
   ];
+
+  // Detect active section based on scroll position
+  useEffect(() => {
+    if (pathname !== '/') {
+      // If we're not on the home page, set active section based on pathname
+      if (pathname === '/gallery') {
+        setActiveSection('gallery');
+      }
+      return;
+    }
+
+    const handleScroll = () => {
+      const sections = ['home', 'about', 'skills', 'projects', 'gallery', 'contact'];
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i]);
+          break;
+        }
+      }
+    };
+
+    // Set initial active section
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [pathname]);
 
   const handleNavClick = (item) => {
     if (item.type === 'section' && pathname !== '/') {
-      // If we're not on home page and clicking a section link, go to home first
-      window.location.href = `/${item.href}`;
+      // If we're not on home page and clicking a section link, navigate to home with hash
+      router.push(`/${item.href}`);
+    } else if (item.type === 'section' && pathname === '/') {
+      // If we're on home page, smooth scroll to section
+      const element = document.querySelector(item.href);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     }
     setIsMenuOpen(false);
+  };
+
+  const isActive = (item) => {
+    if (item.type === 'page') {
+      return pathname === item.href;
+    } else {
+      return activeSection === item.id;
+    }
   };
 
   return (
@@ -50,23 +102,32 @@ const Navbar = () => {
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={`px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-blue-50 ${
-                      pathname === item.href 
-                        ? 'text-blue-600' 
+                    className={`px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-50 relative ${
+                      isActive(item)
+                        ? 'text-blue-600 bg-blue-50 font-semibold' 
                         : 'text-gray-700 hover:text-blue-600'
                     }`}
                   >
                     {item.name}
+                    {isActive(item) && (
+                      <div className="absolute bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full"></div>
+                    )}
                   </Link>
                 ) : (
-                  <a
+                  <button
                     key={item.name}
-                    href={item.href}
                     onClick={() => handleNavClick(item)}
-                    className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-blue-50"
+                    className={`px-3 py-2 rounded-md text-base font-medium transition-all duration-300 hover:bg-blue-50 relative ${
+                      isActive(item)
+                        ? 'text-blue-600 bg-blue-50 font-semibold' 
+                        : 'text-gray-700 hover:text-blue-600'
+                    }`}
                   >
                     {item.name}
-                  </a>
+                    {isActive(item) && (
+                      <div className="absolute bottom-1 left-0 right-0 h-0.5 bg-blue-600 rounded-full"></div>
+                    )}
+                  </button>
                 )
               ))}
             </div>
@@ -118,14 +179,32 @@ const Navbar = () => {
         <div className="md:hidden bg-white/95 backdrop-blur-md border-b border-gray-200">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50 block px-3 py-2 rounded-md text-lg font-medium transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
+              item.type === 'page' ? (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block px-3 py-2 rounded-md text-lg font-medium transition-all duration-300 relative ${
+                    isActive(item)
+                      ? 'text-blue-600 bg-blue-100 font-semibold border-l-4 border-blue-600' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavClick(item)}
+                  className={`text-left w-full block px-3 py-2 rounded-md text-lg font-medium transition-all duration-300 relative ${
+                    isActive(item)
+                      ? 'text-blue-600 bg-blue-100 font-semibold border-l-4 border-blue-600' 
+                      : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              )
             ))}
             {/* Mobile Let's Connect Button */}
             <div className="pt-4 pb-2 px-3">
