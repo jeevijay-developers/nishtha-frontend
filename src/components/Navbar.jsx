@@ -9,7 +9,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home', href: '/', type: 'page' },
+    { name: 'Home', href: '#home', type: 'page' },
     { name: 'About', href: '#about', type: 'section' },
     { name: 'Skill & Achievements', href: '#skills', type: 'section' },
     { name: 'Projects', href: '#projects', type: 'section' },
