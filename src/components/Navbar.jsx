@@ -1,34 +1,44 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Skill & Achievements', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/', type: 'page' },
+    { name: 'About', href: '#about', type: 'section' },
+    { name: 'Skill & Achievements', href: '#skills', type: 'section' },
+    { name: 'Projects', href: '#projects', type: 'section' },
+    { name: 'Gallery', href: '/gallery', type: 'page' },
+    { name: 'Contact', href: '#contact', type: 'section' },
   ];
+
+  const handleNavClick = (item) => {
+    if (item.type === 'section' && pathname !== '/') {
+      // If we're not on home page and clicking a section link, go to home first
+      window.location.href = `/${item.href}`;
+    }
+    setIsMenuOpen(false);
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-200 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 sm:h-20">
           {/* Logo/Brand */}
-          <div className=" flex-shrink-0 flex items-center">
+          <div className="flex-shrink-0 flex items-center">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <img 
-                src="/logonisi.png" 
-                alt="Nishtha Logo" 
-                className="h-15 w-15 sm:h-24 sm:w-24 cursor-pointer "
-                
-              />
-              {/* <h1 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Nishtha
-              </h1> */}
+              <Link href="/">
+                <img 
+                  src="/logonisi.png" 
+                  alt="Nishtha Logo" 
+                  className="h-15 w-15 sm:h-24 sm:w-24 cursor-pointer"
+                />
+              </Link>
             </div>
           </div>
 
@@ -36,13 +46,28 @@ const Navbar = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-blue-50"
-                >
-                  {item.name}
-                </a>
+                item.type === 'page' ? (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={`px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-blue-50 ${
+                      pathname === item.href 
+                        ? 'text-blue-600' 
+                        : 'text-gray-700 hover:text-blue-600'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => handleNavClick(item)}
+                    className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 hover:bg-blue-50"
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
